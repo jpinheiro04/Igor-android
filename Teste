@@ -1,0 +1,79 @@
+Tela inicial
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@android:color/white">
+
+    <!-- Logo -->
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_launcher_foreground"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="Logo" />
+
+    <!-- Texto de boas-vindas -->
+    <TextView
+        android:id="@+id/txt_boas_vindas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Faça seu Login em nossa plataforma"
+        android:textSize="16sp"
+        android:textColor="#000000"
+        android:layout_below="@id/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp" />
+
+    <!-- Campo de login -->
+    <EditText
+        android:id="@+id/edt_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Digite o seu login"
+        android:layout_below="@id/txt_boas_vindas"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:background="@android:drawable/editbox_background" />
+
+    <!-- Campo de senha -->
+    <EditText
+        android:id="@+id/edt_senha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Digite a sua senha"
+        android:inputType="textPassword"
+        android:layout_below="@id/edt_login"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:background="@android:drawable/editbox_background" />
+
+    <!-- Botão Logar -->
+    <Button
+        android:id="@+id/btn_logar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LOGAR"
+        android:background="#4CAF50"
+        android:textColor="#FFFFFF"
+        android:layout_below="@id/edt_senha"
+        android:layout_marginTop="15dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginRight="10dp" />
+
+    <!-- Botão Limpar -->
+    <Button
+        android:id="@+id/btn_limpar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LIMPAR"
+        android:background="#F44336"
+        android:textColor="#FFFFFF"
+        android:layout_below="@id/edt_senha"
+        android:layout_marginTop="15dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="10dp" />
+
+</RelativeLayout>
