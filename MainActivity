@@ -1,0 +1,57 @@
+package com.example.atividadesigor
+
+import android.os.Bundle
+import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+
+class MainActivity : AppCompatActivity() {
+    latenit
+    var envioDados: EditText
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+
+//        AlertDialog.Builder(this)
+//            .setTitle("Atualização")
+//            .setMessage("Quer atualizar o seu S.O ")
+//            .setPositiveButton("Sim") {
+//                variavel.opcao ->
+//            }
+//            .setNegativeButton("Não"){
+//                 variavel.opcao ->
+//             }
+//            .setNegativeButton("Mais Tarde"){
+//                variavel.opcao ->
+//            }
+//        .create()
+//         .show()
+
+        val botaoEnviar: Button = findViewById(R.id.EnvioInformacao)
+        botaoEnviar.setOnClickListener {
+
+//            fun EnvioInformacoes(){
+            envioDados = findViewById(R.id.envioDados)
+            var intent = intent(
+                this,
+                RececaoDados::class.java
+            )
+            intent.putExtra("", envioDados.text.toString())
+            startActivity(intent)
+        }
+
+
+    }
+
+}
+
+
+
+//    fun abrir(){fun EnvioInformacoes(){
+//        var envioDados = findViewById<EditText>(R. id.envioDados)
+//        var  intent = intent(this,Rececao::class.java)
+//        startActivity(intent)
+//    }
