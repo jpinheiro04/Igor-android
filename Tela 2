@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:id="@+id/enviodados"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EnvioDados"
+    android:background="#E3F2FD">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Formulário Envio de dados"
+        android:textSize="34sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:textColor="#5C04FB" />
+
+    <EditText
+        android:id="@+id/campoTexto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:textColorHint="#000000"
+        android:hint="Digite aqui"/>
+
+    <Button
+        android:id="@+id/BotaoEnviar"
+        android:layout_width="400dp"
+        android:layout_height="80dp"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#4CAF50"
+        android:text="Enviar dados do formulário"
+        android:textSize="25sp"
+        android:layout_marginTop="60dp"
+        android:layout_gravity="center" />
+
+    <Button
+        android:id="@+id/BotaoEnviardois"
+        android:layout_width="400dp"
+        android:layout_height="80dp"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#4CAF50"
+        android:text="Enviar dados do formulário"
+        android:textSize="25sp"
+        android:layout_marginTop="60dp"
+        android:layout_gravity="center" />
+
+</LinearLayout>
+------------------------------------------------------------------------------------------------------------------------
+
+package com.example.treinos
+
+import android.os.Bundle
+import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+
+class EnvioDados : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContentView(R.layout.activity_envio_dados)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.enviodados)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
+    }
+}
